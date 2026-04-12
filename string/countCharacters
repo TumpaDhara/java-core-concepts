@@ -1,0 +1,36 @@
+package stringpractice;
+
+import java.util.Scanner;
+
+public class CountCharacters {
+    public static void main(String[] args){
+        Scanner obj1 = new Scanner(System.in);
+        System.out.println("Enter a string :");
+        String input = obj1.nextLine();
+        int countupper = 0;
+        int countlower = 0;
+        int countAlpha = 0;
+        int countNumber = 0;
+        int specialChar = 0;
+        for(int i = 0;i<input.length();i++){
+            char ch = input.charAt(i);
+            if(Character.isLetter(ch)){
+                if(Character.isUpperCase(ch)){
+                    countupper++;
+                }else {
+                    countlower++;
+                }
+            } else if (Character.isDigit(ch)) {
+                countNumber++;
+            }else {
+                specialChar++;
+            }
+        }
+        System.out.println("Total number of uppercase in the string : "+ countupper);
+        System.out.println("Total number of lowercase in the string : "+ countlower);
+        System.out.println("Total number of alpphabets in the string : "+ countNumber);
+        System.out.println("Total number of digits in the string : "+ specialChar);
+        /*System.out.println("The number of special characters in the string : "+ countSpecialCharacter);*/
+
+    }
+}
