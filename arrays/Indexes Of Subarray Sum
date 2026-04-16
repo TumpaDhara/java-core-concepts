@@ -1,0 +1,44 @@
+
+class Solution {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        // code here
+        ArrayList<Integer> list = new ArrayList<>();         
+   /*    for(int i = 0; i < arr.length; i++){
+
+    int temp = 0;
+
+    for(int j = i; j < arr.length; j++){
+
+        temp += arr[j];
+
+        if(temp == target){
+            list.add(i + 1);
+            list.add(j + 1);
+            return list;
+        }
+    }
+*/
+int start = 0;
+int sum = 0;
+
+for(int i = 0; i < arr.length; i++){
+
+    sum += arr[i];   // new element added
+
+    while(sum > target){   // besi hoye gele komabo
+        sum -= arr[start];
+        start++;
+    }
+
+    if(sum == target){
+        list.add(start + 1);
+        list.add(i + 1);
+        return list;
+    }
+}
+        list.clear();
+        list.add(-1);
+        return list;
+    }
+}
+
