@@ -1,0 +1,19 @@
+import java.util.*;
+class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        int current = 1;
+        int i = 0;
+        
+        while(k > 0){
+            if(i < arr.length && arr[i] == current){
+                i++; // number present
+            } else {
+                k--; // missing number
+                if(k == 0) return current;
+            }
+            current++;
+        }
+        return -1;
+    }
+
+}
