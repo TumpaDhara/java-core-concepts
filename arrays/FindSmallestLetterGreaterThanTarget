@@ -1,0 +1,17 @@
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        //Arrays.sort(letters);
+        for(int i = 0;i<letters.length;i++){
+            if(letters[i] > target){
+                return letters[i];
+            }
+        }
+        return letters[0];
+    }
+public static void main(String[] args){
+char[] arr = new int[3]{'c','f','h'};
+char target = 'c';
+char result = nextGreatestLetter(arr,target);
+System.out.println(result);
+}
+}
