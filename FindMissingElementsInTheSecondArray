@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Solution {
+
+    public static List<Integer> findDifference(int[] a, int[] b) {
+
+        HashSet<Integer> setB = new HashSet<>();
+
+        // add all elements of b into set
+        for(int num : b){
+            setB.add(num);
+        }
+
+        List<Integer> result = new ArrayList<>();
+
+        // check elements of a
+        for(int num : a){
+            if(!setB.contains(num)){
+                result.add(num);
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5, 10};
+        int[] b = {2, 3, 1, 0, 5};
+
+        System.out.println(findDifference(a, b));
+    }
+}
